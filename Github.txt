@@ -1,0 +1,40 @@
+Open Git CMD
+Run below Commands
+
+git --version
+
+git config --global user.name "Your Name"
+
+git config --global user.email "youremail@example.com"
+
+----------------------------------------------------------
+
+Go to GitHub.com > click on New repository
+Give a name 
+Click Create repository
+GitHub will now show you a URL like:
+https://github.com/yourusername/demo-app.git
+Copy it
+
+--------------------------------------------------------
+Come to Git CMD again and run below commands
+
+cd /path/to/desktop
+
+mkdir demo-app
+
+cd demo-app
+
+	create: index.html and index.css files in this folder
+
+git init
+
+git add .
+
+git commit -m "Initial commit"
+
+git remote add origin https://github.com/yourusername/demo-app.git  //Your Repo URL 
+
+git branch -M main
+
+git push -u origin main
