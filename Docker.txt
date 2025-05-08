@@ -1,0 +1,35 @@
+Open Ubuntu VM and open terminal
+Run below commands
+
+1. sudo apt update 
+
+2. sudo apt install docker.io
+
+3. docker images
+//it will show 2 images: Python and OpenJDK
+
+4. docker ps
+
+5. docker rmi (image_id1)
+
+6. docker rmi (image_id2)
+
+//if it shows error like container is blocking: then copy the container id from the error and run below command
+
+docker rm -f (container_id)
+
+and again try command 5 and 6
+
+7. docker run -it -d openjdk
+
+8. docker images
+
+9. docker ps
+//it will show a container id copy it
+
+10. docker exec -it (container_id) jshell
+
+Now jshell will open do the java programming
+
+
+
