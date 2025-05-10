@@ -1,0 +1,40 @@
+
+Vagrant.configure("2") do |config|
+
+  config.vm.define "vm1" do |vm1|
+  config.vm.box = "ubuntu/focal64"
+  config.vm.box_version = "20240821.0.1"
+  config.vm.network "private_network", ip: "192.168.33.10"
+  config.vm.network "public_network"
+
+end
+  config.vm.define "vm2" do |vm2|
+  config.vm.box = "ubuntu/focal64"
+  config.vm.box_version = "20240821.0.1"
+  config.vm.network "private_network", ip: "192.168.33.11"
+  config.vm.network "public_network"
+  end
+end
+
+
+Commands:
+
+vagrant init ubuntu/focal64 --box-version 20240821.0.1
+
+vagrant up
+
+vagrant ssh vm1/vm2    in 2 separate terminals
+
+on terminal 1
+echo "Hello World!" > /vagrant/test.txt
+
+
+on terminal 2
+cat /vagrant/test.txt
+
+
+For stopping the vms
+vagrant halt
+
+for deleting vm
+vagrant destroy
