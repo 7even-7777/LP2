@@ -1,0 +1,30 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/focal64"
+  config.vm.box_version = "20240821.0.1"
+
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+
+  config.vm.synced_folder ".", "/var/www/html"
+
+end
+
+
+on terminal
+vagrant init ubuntu/focal64 --box-version 20240821.0.1
+
+vagrant up
+
+vagrant ssh
+
+sudo apt-get update
+
+sudo apt-get install -y apache2
+
+sudo systemctl start apache2
+
+nano /var/www/html/index.html
+//paste your code or you can edit in vs code also
+
+//same for css and js files
+
+Now Your website is live
